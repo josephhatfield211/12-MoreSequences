@@ -273,7 +273,7 @@ def draw_shapes(shapes, window):
       :type window:  rg.RoseWindow
     """
     # ------------------------------------------------------------------
-    # TODO: 9. Implement and test this function. Make sure you do TO DO 8 in main first!
+    # done: 9. Implement and test this function. Make sure you do TO DO 8 in main first!
     #     The testing code is already written for you (that you just enabled in TO DO 8).
     #
     ####################################################################
@@ -387,7 +387,7 @@ def rectangles_from_circles(circles):
       :rtype: list of rg.Rectangles
     """
     # ------------------------------------------------------------------
-    # TODO: 10. Implement and test this function.
+    # done: 10. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     ####################################################################
@@ -398,7 +398,12 @@ def rectangles_from_circles(circles):
     #            in this function, so DON'T draw anything in here!
     ####################################################################
     # ------------------------------------------------------------------
-
+    rectangles = []
+    for k in range(len(circles)):
+        corner1 = rg.Point(circles[k].center.x-circles[k].radius,circles[k].center.y-circles[k].radius)
+        corner2 = rg.Point(circles[k].center.x + circles[k].radius, circles[k].center.y + circles[k].radius)
+        rectangles = rectangles + [rg.Rectangle(corner1,corner2)]
+    return rectangles
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
